@@ -70,6 +70,14 @@ void Core::Init()
 				}
 			}
 		}
+		if (!Storage::FileExists(STR("db/contacts.sqlite"))){
+			if(!Database::ProvDB(STR("db/contacts.sqlite"), STR("provscripts/db/contacts.sql"))){
+					HardwareManager::GetDisplay()->FillRectangle(0, 305, 240, 12, FineOSColor(204,0,204,255));
+					HardwareManager::GetDisplay()->DrawString(STR("DB setup error!"), 1, 307, 1, COLOR_BLACK, COLOR_WHITE);
+					HardWareManager::GetDisplay()->Flush();
+				}
+		}
+		
  	}
 
 	Layout::Init(); // Late init because Layout also draws.
