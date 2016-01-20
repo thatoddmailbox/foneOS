@@ -106,7 +106,26 @@ void FoneOSImage::Draw(FoneOSScreen * scr)
 	}
 }
 
+////
+//// FoneOSContact (emlyn made this it is a contact i wanna make a contacts app)
+////
 
+FoneOSContact::FoneOSContact(FoneOSString firstName, FoneOSString lastName, int phoneNumber, int id)
+{
+	this->font = DEFAULT_FONT;
+	this->first = firstName;
+	this->last = lastName;
+	this->phoneNumber = phoneNumber;
+	this->id = id;
+	this->Create();
+}
+FoneOSContact::displayContact(FoneOSScreen * scr, int x, int y, int width, int height, bool firstName, bool lastName, bool phoneNumber)
+{
+	//interpolates what to draw
+	//the bools tell what to draw
+	//then it draws in a manner which i will use in the fone contacts app which I will make
+	HardwareManager::GetDisplay()->FillRectangle(this->x, this->y, this->width + x, this->height + y, COLOR_GRAY);
+}
 
 ////
 //// FoneOSKeyboard
