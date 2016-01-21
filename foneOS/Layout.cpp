@@ -161,6 +161,13 @@ FoneOSKeyboard::FoneOSKeyboard()
 		bottomRow[i].height = screenHeight/9;
 		bottomRow[i].onActivate = FoneOSKeyboard_callback;
 	}
+	this->space = FoneOSButton();
+	space.text = " ";
+	space.x = screenWidth/4;
+	space.y = screenHeight - (screenHeight/9 * 2);
+	space.width = screenWidth/2;
+	space.height = screenHeight/9;
+	space.onActivate = FoneOSKeyboard_callback;
 	
 }
 
@@ -196,7 +203,15 @@ void FoneOSKeyboard::handleTouch(FoneOSPoint p)
   				this->bottomRow[i].handleTouch(p);
   				
     			}
+    			
 	}
+	if (	p.x > this->space.x &&
+    			p.x < (this->space.x + this->space.width) &&
+    			p.y > this->space.y &&
+    			p.y < (this->space.y + this->space.height)){
+  				this->space.handleTouch(p);
+  				
+    			}
 }
 void FoneOSKeyboard::Draw(FoneOSScreen * scr)
 {
@@ -214,13 +229,7 @@ void FoneOSKeyboard::Draw(FoneOSScreen * scr)
 	for(int i=0;i<7;i++){
   		this->bottomRow[i].Draw(scr);
 	}
-	FoneOSButton space = FoneOSButton();
-	space.text = " ";
-	space.x = screenWidth/4;
-	space.y = screenHeight - (screenHeight/9 * 2);
-	space.width = screenWidth/2;
-	space.height = screenHeight/9;
-	space.onActivate = FoneOSKeyboard_callback;
+	
 	space.Draw(scr);
 	
 }
