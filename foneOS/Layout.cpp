@@ -125,13 +125,13 @@ FoneOSKeyboard::FoneOSKeyboard()
 	
 	char line1[] = {'q','w','e','r','t','y','u','i','o','p'};
 	//FoneOSButton topRow[10];
-	int topRowHeight = screenHeight - (screenHeight/9 * 4);
+	int topRowHeight = screenHeight - (screenHeight/9 * 5);
 	char line2[] = {'a','s','d','f','g','h','j','k','l'};
 	//FoneOSButton middleRow[9];
-	int middleRowHeight = screenHeight - (screenHeight/9 * 3);
+	int middleRowHeight = screenHeight - (screenHeight/9 * 4);
 	char line3[] = {'z','x','c','v','b','n','m'};
 	//FoneOSButton bottomRow[7];
-	int bottomRowHeight = screenHeight - (screenHeight/9 * 2);
+	int bottomRowHeight = screenHeight - (screenHeight/9 * 3);
 	FoneOSPoint pt1 = FoneOSPoint();
 	FoneOSPoint pt2 = FoneOSPoint();
 	for(int i = 0; i < 10; i++){
