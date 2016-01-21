@@ -203,7 +203,7 @@ void FoneOSKeyboard::Draw(FoneOSScreen * scr)
 	int screenWidth = HardwareManager::GetDisplay()->GetWidth();
 	int screenHeight = HardwareManager::GetDisplay()->GetHeight();
 	
-	HardwareManager::GetDisplay()->DrawRectangle(0, screenHeight - (screenHeight/9 * 3) + 10, screenWidth, screenHeight, COLOR_WHITE);
+	HardwareManager::GetDisplay()->DrawRectangle(0, screenHeight - (screenHeight/9 * 3) + 10, screenWidth, screenHeight, FoneOSColor(148, 44, 246, 255));
 	
 	for(int i=0;i<10;i++){
   		this->topRow[i].Draw(scr);
